@@ -29,7 +29,7 @@ def main(url,command):
         driver.get(url= url)
         try:
             driver.find_element(by= By.ID, value= 'L2AGLb').click() #accept cookie
-            if command== 'погода':
+            if command== 'weather':
                 weather(url_w= url+'search?q=погода&rlz=1C1CHZN_ruUA978UA978&oq=gjuj&aqs=chrome.1.69i57j0i1i10i512l7j0i10i512j0i1i10i512.2170j0j4&sourceid=chrome&ie=UTF-8')
             elif command== 'Другое':
                 another(url_an= 'https://www.google.ru/search?q='+ asistent.recognizer())
@@ -37,7 +37,7 @@ def main(url,command):
             print(e)
             pass
 
-        #if command== 'погода':
+        #if command== 'weather':
         #    weather(url_w= url+'search?q=погода&rlz=1C1CHZN_ruUA978UA978&oq=gjuj&aqs=chrome.1.69i57j0i1i10i512l7j0i10i512j0i1i10i512.2170j0j4&sourceid=chrome&ie=UTF-8')
         #elif command== 'Другое':
         #    another(url_an= 'https://www.google.ru/search?q='+ asistent.recognizer())
@@ -50,10 +50,10 @@ def main(url,command):
 asistent = speech_recog()
 asistent.recognizer()
 
-if asistent.recognizer() == 'погода':
+if asistent.recognizer() == 'weather':
     print(asistent.recognizer())
-    main(url=url, command= 'погода')
-elif asistent.recognizer() == 'Открой Telegram':
+    main(url=url, command= 'weather')
+elif asistent.recognizer() == 'Open Telegram':
     subprocess.call('C:\\Users\\User\\AppData\\Roaming\\Telegram Desktop\\Telegram.exe')
 else:
     print(asistent.recognizer())
